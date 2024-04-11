@@ -18,7 +18,7 @@ spočívá v posunu znaků v zadaném textu vždy o stejnou zadanou číselnou h
 
 Vernamova šifra
 
-
+spočívá v zadaném hesle. Text se posune právě o tolik znaků, kolik činí v závislosti na posloupnosti jednotlivá písmena v hesle. Pokud například zadáme 'ahoj' a jako heslo 'a' pak se všechna písmena ve slově posunou právě o jedno -> vznikne 'bipk'.
 
 ## Hardware description of demo application
 
