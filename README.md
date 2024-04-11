@@ -16,7 +16,7 @@ Caesarova šifra
 
 spočívá v posunu znaků v zadaném textu vždy o stejnou zadanou číselnou hodnotu v abecedě. Například pokud zadáte 'ahoj' a posun zvolíte 1 pak se všechny znaky v tomto slově posunou právě o jeden znak vpřed čili vznikne 'bipk'.
 
-Vernerova šifra
+Vernamova šifra
 
 
 
