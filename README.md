@@ -20,6 +20,10 @@ Vernamova šifra
 
 spočívá v zadaném hesle. Text se posune právě o tolik znaků, kolik činí v závislosti na posloupnosti jednotlivá písmena v hesle. Pokud například zadáme 'ahoj' a jako heslo 'a' pak se všechna písmena ve slově posunou právě o jedno -> vznikne 'bipk'.
 
+Atbashova šifra
+
+e jednoduchou, klasickou, monoalfabetickou substituční šifrou, postavenou na jedné kódovací tabulce. Základním principem Atbashe je převrácení pořadí znaků v šifrovací tabulce. První znak abecedy otevřeného textu tak odpovídá poslednímu znaku abecedy šifry.
+
 ## Hardware description of demo application
 
 Insert descriptive text and schematic(s) of your implementation.
