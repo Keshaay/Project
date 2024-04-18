@@ -5,10 +5,10 @@ use std.env.all;
 use std.standard.all;
 use std.textio.all;
 
-entity test_tb is
-end test_tb;
+entity tb_atbash is
+end tb_atbash;
 
-architecture Behavioral of test_tb is
+architecture Behavioral of tb_atbash is
     constant txt : string := "Melicharova"; -- Input text, mixed case
     shared variable encrypted: string(txt'range);
     shared variable decrypted: string(txt'range);
