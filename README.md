@@ -12,15 +12,15 @@ Description: This project aims to demonstrate various simple ciphers, such as th
 
 Enter a description of the problem and how to solve it.
 
-# Caesarova šifra 
+### Caesarova šifra 
 
 spočívá v posunu znaků v zadaném textu vždy o stejnou zadanou číselnou hodnotu v abecedě. Například pokud zadáte 'ahoj' a posun zvolíte 1 pak se všechny znaky v tomto slově posunou právě o jeden znak vpřed čili vznikne 'bipk'.
 
-# Vernamova šifra
+### Vernamova šifra
 
 spočívá v zadaném hesle. Text se posune právě o tolik znaků, kolik činí v závislosti na posloupnosti jednotlivá písmena v hesle. Pokud například zadáme 'ahoj' a jako heslo 'a' pak se všechna písmena ve slově posunou právě o jedno -> vznikne 'bipk'.
 
-# Atbashova šifra
+### Atbashova šifra
 
 je jednoduchou, klasickou, monoalfabetickou substituční šifrou, postavenou na jedné kódovací tabulce. Základním principem Atbashe je převrácení pořadí znaků v šifrovací tabulce. První znak abecedy otevřeného textu tak odpovídá poslednímu znaku abecedy šifry.
 
