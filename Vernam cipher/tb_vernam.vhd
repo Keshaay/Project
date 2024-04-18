@@ -9,23 +9,23 @@ entity tb_vernam is
 end tb_vernam;
 
 architecture Behavioral of tb_vernam is
-    constant txt : string := "Melicharova"; -- Pùvodní zpráva
-    constant key : string := "tukabelmaso"; -- Klíè musí bıt stejnì dlouhı jako zpráva
+    constant txt : string := "Melicharova"; -- PÃ¹vodnÃ­ zprÃ¡va
+    constant key : string := "tukabelmaso"; -- KlÃ­Ã¨ musÃ­ bÃ½t stejnÃ¬ dlouhÃ½ jako zprÃ¡va
     shared variable encrypted: string(txt'range);
     shared variable decrypted: string(txt'range);
     
-    -- Procedura pro šifrování Vernamovou šifrou
+    -- Procedura pro Å¡ifrovÃ¡nÃ­ Vernamovou Å¡ifrou
     procedure vernam_encrypt_decrypt(str: string; key: string; variable output: inout string) is
         variable tmp_char : character;
         variable str_byte, key_byte, result_byte : std_logic_vector(7 downto 0);
     begin
         for i in str'range loop
-            -- Pøevod znakù na std_logic_vector
+            -- PÃ¸evod znakÅ¯ na std_logic_vector
             str_byte := std_logic_vector(to_unsigned(character'pos(str(i)), 8));
             key_byte := std_logic_vector(to_unsigned(character'pos(key(i)), 8));
-            -- Provádìní XOR operace
+            -- ProvÃ¡dÃ¬nÃ­ XOR operace
             result_byte := str_byte xor key_byte;
-            -- Pøevod zpìt na character
+            -- PÃ¸evod zpÄ›t na character
             tmp_char := character'val(to_integer(unsigned(result_byte)));
             output(i) := tmp_char;
         end loop;
@@ -33,7 +33,7 @@ architecture Behavioral of tb_vernam is
     end procedure;
 
 begin
-    -- Zavoláme proceduru pro šifrování a dešifrování
-    vernam_encrypt_decrypt(txt, key, encrypted); -- Šifrování
-    vernam_encrypt_decrypt(encrypted, key, decrypted); -- Dešifrování
+    -- ZavolÃ¡me proceduru pro Å¡ifrovÃ¡nÃ­ a deÅ¡ifrovÃ¡nÃ­
+    vernam_encrypt_decrypt(txt, key, encrypted); -- Å ifrovÃ¡nÃ­
+    vernam_encrypt_decrypt(encrypted, key, decrypted); -- DeÅ¡ifrovÃ¡nÃ­
 end Behavioral;
