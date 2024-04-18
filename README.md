@@ -12,7 +12,7 @@ Description: This project aims to demonstrate various simple ciphers, such as th
 
 Enter a description of the problem and how to solve it.
 
-#### Caesarova šifra 
+### Caesarova šifra 
 
 spočívá v posunu znaků v zadaném textu vždy o stejnou zadanou číselnou hodnotu v abecedě. Například pokud zadáte 'ahoj' a posun zvolíte 1 pak se všechny znaky v tomto slově posunou právě o jeden znak vpřed čili vznikne 'bipk'.
 
