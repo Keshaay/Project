@@ -24,7 +24,7 @@ Atbashova šifra
 
 je jednoduchou, klasickou, monoalfabetickou substituční šifrou, postavenou na jedné kódovací tabulce. Základním principem Atbashe je převrácení pořadí znaků v šifrovací tabulce. První znak abecedy otevřeného textu tak odpovídá poslednímu znaku abecedy šifry.
 
-![abc](https://github.com/Keshaay/Project/blob/main/PNG/atbash_abeceda.png)
+![abc](https://github.com/Keshaay/Project/blob/main/.PNG/atbash_abeceda.png)
 
 ## Hardware description of demo application
 
