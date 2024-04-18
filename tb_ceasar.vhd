@@ -7,10 +7,10 @@ use std.standard.all;
 use std.textio.all;
 
 
-entity test_tb is
-end test_tb;
+entity tb_ceasar is
+end tb_ceasar;
 
-architecture Behavioral of test_tb is
+architecture Behavioral of tb_ceasar is
 
 
 
