@@ -4,18 +4,20 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity top_level is
     Port (
-        clk : in std_logic;             -- Hodinový signál
-        rst : in std_logic;             -- Reset signál
-        input_str : in std_logic_vector(39 downto 0);  -- Vstupní ?et?zec (5 znak? * 8 bit?)
-        input_key : in std_logic_vector(39 downto 0);  -- Vstupní klí? pro Vernamovu šifru
-        mode_select : in std_logic_vector(1 downto 0); -- Výb?r šifrovací metody: 00-Vernam, 01-Atbash
-        cipher_mode : in std_logic;    -- Režim operace: '0' pro šifrování, '1' pro dešifrování
-        led_r : out std_logic;          -- ?ervená LED
-        led_g : out std_logic;          -- Zelená LED
-        led_b : out std_logic;          -- Modrá LED
-        seg : out std_logic_vector(6 downto 0); -- Sedmisegmentový displej
+        clk : in std_logic;             -- Hodinovï¿½ signï¿½l
+        rst : in std_logic;             -- Reset signï¿½l
+        input_str : in std_logic_vector(39 downto 0);  -- Vstupnï¿½ ?et?zec (5 znak? * 8 bit?)
+        input_key : in std_logic_vector(39 downto 0);  -- Vstupnï¿½ klï¿½? pro Vernamovu ï¿½ifru
+        mode_select : in std_logic_vector(1 downto 0); -- Vï¿½b?r ï¿½ifrovacï¿½ metody: 00-Vernam, 01-Atbash
+        cipher_mode : in std_logic;    -- Reï¿½im operace: '0' pro ï¿½ifrovï¿½nï¿½, '1' pro deï¿½ifrovï¿½nï¿½
+        led_r : out std_logic;          -- ?ervenï¿½ LED
+        led_g : out std_logic;          -- Zelenï¿½ LED
+        led_b : out std_logic;          -- Modrï¿½ LED
+        seg : out std_logic_vector(6 downto 0); -- Sedmisegmentovï¿½ displej
         SW: in std_logic_vector(1 downto 0);
-        
+        LED : out   std_logic_vector(1 downto 0);
+        SW_L  : in    std_logic_vector(5 downto 0);
+        LED_L : out   std_logic_vector(5 downto 0);
         
         
         CA    : out   std_logic;                    --! Cathode of segment A
@@ -29,6 +31,7 @@ entity top_level is
         AN    : out   std_logic_vector(7 downto 0); --! Common anodes of all on-board displays
         BTNC  : in    std_logic;                    --! Clear the display
         BTND  : in    std_logic;
+        BTNU  : in    std_logic;
         BTNR  : in    std_logic                     --! Switch between displays
     );
 end top_level;
@@ -38,7 +41,7 @@ architecture Behavioral of top_level is
     signal decrypted : std_logic_vector(39 downto 0);
 
 
-    -- Funkce pro Vernamovu šifru
+    -- Funkce pro Vernamovu ï¿½ifru
     function vernam_encrypt(input_str : std_logic_vector; key_str : std_logic_vector) return std_logic_vector is
         variable result : std_logic_vector(input_str'length-1 downto 0);
     begin
@@ -48,7 +51,7 @@ architecture Behavioral of top_level is
         return result;
     end function;
 
-    -- Funkce pro Atbashovu šifru
+    -- Funkce pro Atbashovu ï¿½ifru
     function atbash_cipher(input : std_logic_vector) return std_logic_vector is
         variable result : std_logic_vector(input'length-1 downto 0);
         variable ch : character;
@@ -70,6 +73,8 @@ architecture Behavioral of top_level is
     component bin2seg is
         port (
             clear : in    std_logic;
+            dec : in    std_logic;
+            dec1 : in    std_logic;
             bin   : in    std_logic_vector(3 downto 0);
             seg   : out   std_logic_vector(6 downto 0)
         );
@@ -85,69 +90,41 @@ architecture Behavioral of top_level is
             pulse : out   std_logic
         );
     end component;
+
+    component debounce is
+        port (
+            clk      : in    std_logic;
+            rst      : in    std_logic;
+            en       : in    std_logic;
+            bouncey  : in    std_logic;
+            clean    : out   std_logic;
+            pos_edge : out   std_logic;
+            neg_edge : out   std_logic
+        );
+    end component;
+
+    component simple_counter is
+        generic (
+            N_BITS : integer
+        );
+        port (
+            clk   : in    std_logic;
+            rst   : in    std_logic;
+            en    : in    std_logic;
+            count : out   std_logic_vector (2 downto 0)
+        );
+    end component;
     
     signal sig_tmp : std_logic_vector(3 downto 0);
     signal sig_en_250ms   : std_logic; 
+    signal LED_activating_counter : std_logic_vector (2 downto 0);
+    signal sig_event : std_logic;
 
 begin
-    -- LED stavový signál
-    -- P?i?azení LED na základ? stavového signálu
-    
+    -- LED stavovï¿½ signï¿½l
+    -- P?i?azenï¿½ LED na zï¿½klad? stavovï¿½ho signï¿½lu
 
-
-    -- Stavový automat pro šifrování a zobrazení
-    process(clk, rst)
-    begin
-        if rst = '1' then
-            if SW(0)='1' then
-            encrypted <= (others => '0');
-            decrypted <= (others => '0');
-            led_r <= '1';
-            led_g <= '0';
-            led_b <= '0';
-            end if;
-        elsif rising_edge(clk) then
-            if SW(1)='1'then
-             led_r <= '0';
-            led_g <= '1';
-            led_b <= '0';
-            case mode_select is
-                when "00" =>  -- Vernam Cipher
-                    encrypted <= vernam_encrypt(input_str, input_key);
-                when "01" =>  -- Atbash Cipher
-                    encrypted <= atbash_cipher(input_str);
-                when others =>
-                    encrypted <= (others => '0');
-            end case;
-            if cipher_mode = '0' then
-                decrypted <= encrypted;
-            else
-                decrypted <= input_str;
-            end if;
-            end if;
-        end if;
-    end process;
-
-    -- Zobrazení na sedmisegmentovém displeji (demonstra?ní p?íklad)
-    display : component bin2seg
-        port map (
-            clear  => BTNR,
-            bin    => sig_tmp,
-            seg(6) => CA,
-            seg(5) => CB,
-            seg(4) => CC,
-            seg(3) => CD,
-            seg(2) => CE,
-            seg(1) => CF,
-            seg(0) => CG
-        );
-    -- Implementace zobrazování bude záviset na vaší konkrétní aplikaci
-        AN(7 downto 2) <= b"11_1111";
-        AN(1)          <= not(BTND);
-        AN(0)          <= BTND;
-        DP <= '1';
-        
-        clk_en0 : component clock_enable
+    clk_en0 : component clock_enable
         generic map (
             N_PERIODS => 25_000_000
         )
@@ -156,6 +133,107 @@ begin
             rst   => BTNC,
             pulse => sig_en_250ms
         );
-    -- Nap?íklad zobrazování prvních n znak? ze šifrované/dešifrované zprávy
+
+        display2 : component debounce
+            port map (
+                clk      => clk,
+                rst      => BTNC,
+                en       => sig_en_250ms,
+                bouncey  => BTNR,
+                clean    => led_B,
+                pos_edge => sig_event,
+                neg_edge => open
+            );
+            counter : component simple_counter
+                generic map (
+                    N_BITS => 3
+                )
+                port map (
+                   clk   => clk,
+                    rst   => BTNC,
+                    en    => sig_event,
+                    count => LED_activating_counter
+                );
+
+
+
+        display : component bin2seg
+            port map (
+                clear  => BTNC,
+                bin    => sig_tmp,
+                dec    => BTND,
+                dec1   => BTNU,
+                seg(6) => CA,
+                seg(5) => CB,
+                seg(4) => CC,
+                seg(3) => CD,
+                seg(2) => CE,
+                seg(1) => CF,
+                seg(0) => CG
+            );
+
+            sig_tmp <= SW_L;
+            LED_L <= SW_L;
+            DP <= '1';
+    
+
+
+    -- Stavovï¿½ automat pro ï¿½ifrovï¿½nï¿½ a zobrazenï¿½
+ --   process(clk, rst)
+ --   begin
+ --       if rst = '1' then
+ --           if SW(0)='1' then
+ --           encrypted <= (others => '0');
+ --           decrypted <= (others => '0');
+ --           led_r <= '1';
+ --           led_g <= '0';
+ --           led_b <= '0';
+ --           end if;
+ --       elsif rising_edge(clk) then
+ --           if SW(1)='1'then
+ --            led_r <= '0';
+ --           led_g <= '1';
+ --           led_b <= '0';
+ --           case mode_select is
+ --               when "00" =>  -- Vernam Cipher
+ --                   encrypted <= vernam_encrypt(input_str, input_key);
+ --               when "01" =>  -- Atbash Cipher
+ --                   encrypted <= atbash_cipher(input_str);
+ --               when others =>
+ --                   encrypted <= (others => '0');
+ --           end case;
+ --           if cipher_mode = '0' then
+ --               decrypted <= encrypted;
+ --           else
+ --               decrypted <= input_str;
+ --           end if;
+ --           end if;
+ --       end if;
+ --   end process;
+
+ 
+        process(LED_ACTIVATING_COUNTER)
+        begin
+        case LED_ACTIVATING_COUNTER is
+        when "000" =>
+        AN <="01111111";
+        when "001" =>
+        AN <="00111111";
+        when "010" =>
+        AN <="00011111";
+        when "011" =>
+        AN <="00001111";
+        when "100" =>
+        AN <="00000111";
+        when "101" =>
+        AN <="00000011";
+        when "110" =>
+        AN <="00000001";
+        when "111" =>
+        AN <="00000000";
+        
+        end case;
+        end process;
+    
 
 end Behavioral;
