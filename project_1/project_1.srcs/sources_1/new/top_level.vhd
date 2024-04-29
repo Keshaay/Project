@@ -48,8 +48,8 @@ constant txt : string := "Hello";
 constant shift: integer :=5;
 shared variable encrypted_ceasar:string(txt'range);
 shared variable decrypted_ceasar:string(txt'range);
-constant txt2 : string := "Melicharova"; -- Pùvodní zpráva
-    constant key : string := "tukabelmaso"; -- Klíè musí být stejnì dlouhý jako zpráva
+constant txt2 : string := "Melicharova"; -- PÃ¹vodnÃ­ zprÃ¡va
+    constant key : string := "tukabelmaso"; -- KlÃ­Ã¨ musÃ­ bÃ½t stejnÃ¬ dlouhÃ½ jako zprÃ¡va
     shared variable encrypted_vernan: string(txt2'range);
     shared variable decrypted_vernan: string(txt2'range);
 signal bits_encrypted_ceasar:std_logic_vector(8*txt'length-1 downto 0);
@@ -60,18 +60,18 @@ signal bits_decrypted_vernan:std_logic_vector(8*txt2'length-1 downto 0);
 
 
     
-    -- Procedura pro šifrování Vernamovou šifrou
+    -- Procedura pro Å¡ifrovÃ¡nÃ­ Vernamovou Å¡ifrou
     procedure vernam_encrypt_decrypt(str: string; key: string; variable output: inout string) is
         variable tmp_char : character;
         variable str_byte, key_byte, result_byte : std_logic_vector(7 downto 0);
     begin
         for i in str'range loop
-            -- Pøevod znak? na std_logic_vector
+            -- PÃ¸evod znak? na std_logic_vector
             str_byte := std_logic_vector(to_unsigned(character'pos(str(i)), 8));
             key_byte := std_logic_vector(to_unsigned(character'pos(key(i)), 8));
-            -- Provádìní XOR operace
+            -- ProvÃ¡dÃ¬nÃ­ XOR operace
             result_byte := str_byte xor key_byte;
-            -- Pøevod zp?t na character
+            -- PÃ¸evod zp?t na character
             tmp_char := character'val(to_integer(unsigned(result_byte)));
             output(i) := tmp_char;
         end loop;
@@ -163,14 +163,12 @@ signal uartData : std_logic_vector (7 downto 0):= "00000000";
 signal uartTX : std_logic;
 signal Data : std_logic_vector (7 downto 0);
 
-signal btnReg : std_logic_vector (3 downto 0) := "0000";
-signal btnDetect : std_logic;
-signal btnDeBnc : std_logic_vector(4 downto 0);
+
 
 begin
 
-vernam_encrypt_decrypt(txt2, key, encrypted_vernan); -- Šifrování
-vernam_encrypt_decrypt(encrypted_vernan, key, decrypted_vernan); -- Dešifrování
+vernam_encrypt_decrypt(txt2, key, encrypted_vernan); -- Å ifrovÃ¡nÃ­
+vernam_encrypt_decrypt(encrypted_vernan, key, decrypted_vernan); -- DeÅ¡ifrovÃ¡nÃ­
 ceasar_encrypt(txt);
 ceasar_decrypt(encrypted_ceasar);
 
