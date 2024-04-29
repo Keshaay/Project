@@ -14,6 +14,7 @@ entity top_level is
         led_g : out std_logic;          -- Zelen� LED
         led_b : out std_logic;          -- Modr� LED
 --        seg : out std_logic_vector(6 downto 0); -- Sedmisegmentov� displej
+        SW  : in    std_logic_vector(1 downto 0);
         SW_L  : in    std_logic_vector(5 downto 0);
         LED_L : out   std_logic_vector(5 downto 0);
         
@@ -28,8 +29,8 @@ entity top_level is
         DP    : out   std_logic;                    --! Decimal point
         AN    : out   std_logic_vector(7 downto 0); --! Common anodes of all on-board displays
         BTNC  : in    std_logic;                    --! Clear the display
-        BTND  : in    std_logic;
-        BTNU  : in    std_logic;
+--        BTND  : in    std_logic;
+--        BTNU  : in    std_logic;
         BTNR  : in    std_logic                     --! Switch between displays
     );
 end top_level;
@@ -159,8 +160,8 @@ begin
             port map (
                 clear  => BTNC,
                 bin    => sig_tmp,
-                dec    => BTND,
-                dec1   => BTNU,
+                dec    => SW(0),
+                dec1   => SW(1),
                 seg(6) => CA,
                 seg(5) => CB,
                 seg(4) => CC,
@@ -173,8 +174,8 @@ begin
             sig_tmp <= SW_L;
             LED_L <= SW_L;
             DP <= '1';
-            led_r <= BTNU;
-            led_g <= BTND;
+            led_r <= SW(0);
+            led_g <= SW(1);
             
     
 
@@ -185,19 +186,19 @@ begin
         when "000" =>
         AN <="01111111";
         when "001" =>
-        AN <="00111111";
+        AN <="10111111";
         when "010" =>
-        AN <="00011111";
+        AN <="11011111";
         when "011" =>
-        AN <="00001111";
+        AN <="11101111";
         when "100" =>
-        AN <="00000111";
+        AN <="11110111";
         when "101" =>
-        AN <="00000011";
+        AN <="11111011";
         when "110" =>
-        AN <="00000001";
+        AN <="11111101";
         when "111" =>
-        AN <="00000000";
+        AN <="11111110";
         
         end case;
         end process;
