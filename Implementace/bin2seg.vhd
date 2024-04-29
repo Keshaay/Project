@@ -30,112 +30,112 @@ begin
             if(dec1 = '1') then
             case bin is
     
-                when x"3" =>
+                when b"000011" =>
                         seg <= "0000001";
     
-                when x"4" =>
+                when b"000100" =>
                         seg <= "1001111";
     
-                when x"5" =>
+                when b"000101"" =>
                         seg <= "0010010";
     
-                when x"6" =>
+                when b"000110" =>
                         seg <= "0000110";
     
-                when x"7" =>
+                when b"000111" =>
                         seg <= "1001100";
     
-                when x"8" =>
+                when b"001000" =>
                         seg <= "0100100";
     
-                when x"9" =>
+                when b"001001 =>
                         seg <= "0100000";
     
-                when x"0" =>
+                when b"000000" =>
                         seg <= "0001111";
     
-                when x"1" =>
+                when b"000001" =>
                         seg <= "0000000";
     
-                when x"2" =>
+                when b"000010" =>
                         seg <= "0000100";
     
-                when x"d" =>
+                when b"001101" =>
                         seg <= "0001000";
     
-                when x"E" =>
+                when b"001110" =>
                         seg <= "1100000";
     
-                when x"F" =>
+                when b"001111" =>
                         seg <= "0110001";
     
-                when x"G" =>
+                when b"010000" =>
                         seg <= "1000010";
     
-                when x"h" =>
+                when b"010001" =>
                         seg <= "0110000";
     
-                when x"i" =>
+                when b"010010" =>
                         seg <= "0111000";
     
-                when x"j" =>
+                when b"010011" =>
                         seg <= "0100001";
     
-                when x"k" =>
+                when b"010100" =>
                         seg <= "1101000";
     
-                when x"L" =>
+                when b"010101" =>
                         seg <= "0111011";
     
-                when x"M" =>
+                when b"010111" =>
                         seg <= "0100111";
     
-                when x"n" =>
+                when b"011000" =>
                         seg <= "0101000";
     
-                when x"o" =>
+                when b"011001" =>
                         seg <= "1110001";
     
-                when x"P" =>
+                when b"011010" =>
                         seg <= "0101010";
     
-                when x"q" =>
+                when b"011011" =>
                         seg <= "1101010";
     
-                when x"r" =>
+                when b"011100" =>
                         seg <= "1100010";
     
-                when x"S" =>
+                when b"011101" =>
                         seg <= "0011000";
     
-                when x"t" =>
+                when b"011110" =>
                         seg <= "0001100";
     
-                when x"U" =>
+                when b"011111" =>
                         seg <= "1111010";
     
-                when x"V" =>
+                when b"100000" =>
                         seg <= "0100101";
     
-                when x"W" =>
+                when b"100001" =>
                         seg <= "1110000";
     
-                when x"x" =>
+                when b"100010" =>
                         seg <= "1100011";
     
-                when x"y" =>
+                when b"100011" =>
                         seg <= "1010101";
     
-                when x"z" =>
+                when b"100100" =>
                         seg <= "1010100";
     
-                when x"a" =>
+                when b"001010" =>
                         seg <= "1101011";
     
-                when x"b" =>
+                when b"001011" =>
                         seg <= "1000100";
     
-                when x"c" =>
+                when b"001100" =>
                         seg <= "0010011";
                         
                 when others =>
@@ -147,112 +147,112 @@ begin
             if(dec = '0') then
             case bin is
 
-                when x"0" =>
+                when b"000000" =>
                     seg <= "0000001";
 
-                when x"1" =>
+                when b"000001" =>
                     seg <= "1001111";
 
-                when x"2" =>
+                when b"000010" =>
                     seg <= "0010010";
 
-                when x"3" =>
+                when b"000011" =>
                     seg <= "0000110";
 
-                when x"4" =>
+                when b"000100" =>
                     seg <= "1001100";
 
-                when x"5" =>
+                when b"000101" =>
                     seg <= "0100100";
 
-                when x"6" =>
+                when b"000110" =>
                     seg <= "0100000";
 
-                when x"7" =>
+                when b"000111" =>
                     seg <= "0001111";
 
-                when x"8" =>
+                when b"001000" =>
                     seg <= "0000000";
 
-                when x"9" =>
+                when b"001001" =>
                     seg <= "0000100";
 
-                when x"A" =>
+                when b"001010" =>
                     seg <= "0001000";
 
-                when x"b" =>
+                when b"001011" =>
                     seg <= "1100000";
 
-                when x"C" =>
+                when b"001100" =>
                     seg <= "0110001";
 
-                when x"d" =>
+                when b"001101" =>
                     seg <= "1000010";
 
-                when x"E" =>
+                when b"001110" =>
                     seg <= "0110000";
 
-                when x"F" =>
+                when b"001111" =>
                     seg <= "0111000";
 
-                when x"G" =>
+                when b"010000" =>
                     seg <= "0100001";
 
-                when x"h" =>
+                when b"010001" =>
                     seg <= "1101000";
 
-                when x"i" =>
+                when b"010010" =>
                     seg <= "0111011";
 
-                when x"j" =>
+                when b"010011" =>
                     seg <= "0100111";
 
-                when x"k" =>
+                when b"010100" =>
                     seg <= "0101000";
 
-                when x"L" =>
+                when b"010101" =>
                     seg <= "1110001";
 
-                when x"M" =>
+                when b"010111" =>
                     seg <= "0101010";
 
-                when x"n" =>
+                when b"011000" =>
                     seg <= "1101010";
 
-                when x"o" =>
+                when b"011001" =>
                     seg <= "1100010";
 
-                when x"P" =>
+                when b"011010" =>
                     seg <= "0011000";
 
-                when x"q" =>
+                when b"011011" =>
                     seg <= "0001100";
 
-                when x"r" =>
+                when b"011100" =>
                     seg <= "1111010";
 
-                when x"S" =>
+                when b"011101" =>
                     seg <= "0100101";
 
-                when x"t" =>
+                when b"011110" =>
                     seg <= "1110000";
 
-                when x"U" =>
+                when b"011111" =>
                     seg <= "1100011";
 
-                when x"V" =>
+                when b"100000" =>
                     seg <= "1010101";
 
-                when x"W" =>
+                when b"100001" =>
                     seg <= "1010100";
 
-                when x"x" =>
+                when b"100010" =>
                     seg <= "1101011";
 
-                when x"y" =>
+                when b"100011" =>
                     seg <= "1000100";
 
-                when x"Z" =>
+                when b"100100" =>
                     seg <= "0010011";
                     
                 when others =>
@@ -263,112 +263,112 @@ begin
         else
             case bin is
 
-                when x"9" =>
+                when b"001001 =>
                     seg <= "0000001";
 
-                when x"8" =>
+                when b"001000"" =>
                     seg <= "1001111";
 
-                when x"7" =>
+                when b"000111" =>
                     seg <= "0010010";
 
-                when x"6" =>
+                when b"000110" =>
                     seg <= "0000110";
 
-                when x"5" =>
+                when b"000101" =>
                     seg <= "1001100";
 
-                when x"4" =>
+                when b"000100 =>
                     seg <= "0100100";
 
-                when x"3" =>
+                when b"000011" =>
                     seg <= "0100000";
 
-                when x"2" =>
+                when b"000010 =>
                     seg <= "0001111";
 
-                when x"1" =>
+                when b"000001" =>
                     seg <= "0000000";
 
-                when x"0" =>
+                when b"000000" =>
                     seg <= "0000100";
 
-                when x"z" =>
+                when b"100100" =>
                     seg <= "0001000";
 
-                when x"y" =>
+                when b"100011" =>
                     seg <= "1100000";
 
-                when x"x" =>
+                when b"100010" =>
                     seg <= "0110001";
 
-                when x"w" =>
+                when b"100001" =>
                     seg <= "1000010";
 
-                when x"v" =>
+                when b"100000" =>
                     seg <= "0110000";
 
-                when x"u" =>
+                when b"011111" =>
                     seg <= "0111000";
 
-                when x"t" =>
+                when b"011110" =>
                     seg <= "0100001";
 
-                when x"s" =>
+                when b"011101" =>
                     seg <= "1101000";
 
-                when x"r" =>
+                when b"011100" =>
                     seg <= "0111011";
 
-                when x"q" =>
+                when b"011011" =>
                     seg <= "0100111";
 
-                when x"p" =>
+                when b"011010" =>
                     seg <= "0101000";
 
-                when x"o" =>
+                when b"011001" =>
                     seg <= "1110001";
 
-                when x"n" =>
+                when b"011000" =>
                     seg <= "0101010";
 
-                when x"m" =>
+                when b"010111" =>
                     seg <= "1101010";
 
-                when x"l" =>
+                when b"010101" =>
                     seg <= "1100010";
 
-                when x"k" =>
+                when b"010100" =>
                     seg <= "0011000";
 
-                when x"j" =>
+                when b"010011" =>
                     seg <= "0001100";
 
-                when x"i" =>
+                when b"010010" =>
                     seg <= "1111010";
 
-                when x"h" =>
+                when b"010001" =>
                     seg <= "0100101";
 
-                when x"g" =>
+                when b"010000" =>
                     seg <= "1110000";
 
-                when x"f" =>
+                when b"001111" =>
                     seg <= "1100011";
 
-                when x"e" =>
+                when b"001110" =>
                     seg <= "1010101";
 
-                when x"d" =>
+                when b"001101" =>
                     seg <= "1010100";
 
-                when x"c" =>
+                when b"001100" =>
                     seg <= "1101011";
 
-                when x"b" =>
+                when b"001011" =>
                     seg <= "1000100";
 
-                when x"a" =>
+                when b"001010" =>
                     seg <= "0010011";
                     
                 when others =>
