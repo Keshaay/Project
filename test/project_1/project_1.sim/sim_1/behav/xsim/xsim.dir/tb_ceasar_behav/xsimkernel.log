@@ -1,7 +1,0 @@
-Running: xsim.dir/tb_ceasar_behav/xsimk.exe -simmode gui -wdb tb_ceasar_behav.wdb -simrunnum 0 -socket 52782
-Design successfully loaded
-Design Loading Memory Usage: 7772 KB (Peak: 7772 KB)
-Design Loading CPU Usage: 46 ms
-Simulation completed
-Simulation Memory Usage: 8284 KB (Peak: 8284 KB)
-Simulation CPU Usage: 61 ms
