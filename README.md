@@ -55,6 +55,8 @@ This design source named top_level has integrates various encryption algorithms 
 ### Overall Function
 - The code integrates encryption, decryption, and serial communication into one module. It allows users to encrypt and decrypt messages using Vernam and Caesar ciphers and send them serially via UART. Buttons and switches on the device enable users to interactively select operations and monitor results in real time.
 
+here we can see the top level diagram:
+
 ![toplvl1](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_1.png)
 ![toplvl2](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_2.png)
 ![toplvl3](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_3.png)
