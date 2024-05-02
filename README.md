@@ -31,7 +31,29 @@ Atbash Cipher is a simple, classic, monoalphabetic substitution cipher, built on
 
 ## Software description
 
-Here is a sample of our top_level that we implemented on the NEXYS A7-50t board
+This design source named top_level has integrates various encryption algorithms with serial communication to implement an input/output interface. The code defines the `top_level` entity with several inputs and outputs and contains several procedures for encryption and decryption, as well as components for signal control and communication. Here is a brief overview of the main components and their functions:
+
+### Entity and Ports
+- **Entity `top_level`**: Defines the interface with ports for buttons, a clock, and a serial output.
+- **Ports**: Inputs for buttons and a clock signal, and an output for serial communication.
+
+### Encryption Procedures
+- **`vernam_encrypt_decrypt`**: A procedure for encrypting and decrypting using the Vernam cipher, where the output is obtained by XORing the bytes of the key and the input text.
+- **`ceasar_encrypt` and `ceasar_decrypt`**: Procedures for encrypting and decrypting using the Caesar cipher, where the character shift is achieved by adding or subtracting the value of the `shift` constant.
+
+### Conversion Function
+- **`to_std_logic_vector`**: A function to convert a string into `std_logic_vector`, facilitating the handling of text data at the bit level.
+
+### Components
+- **`clock_enable` and `debounce`**: Components for generating stable clock signals and eliminating "bounces" on input buttons.
+- **`UART_TX_CTRL`**: A component for controlling serial communication.
+
+### Processes and Signals
+- **`char_load_process`**: A process for loading encrypted/decrypted data into the UART buffer and controlling data transmission based on button presses and the state of the switch.
+- **Signals for indexes and data preparation**: `ltrindex_ceasar`, `ltrindex_vernan`, `uartData`, `uartRdy`, etc., which control which data is being sent and when.
+
+### Overall Function
+- The code integrates encryption, decryption, and serial communication into one module. It allows users to encrypt and decrypt messages using Vernam and Caesar ciphers and send them serially via UART. Buttons and switches on the device enable users to interactively select operations and monitor results in real time.
 
 ![toplvl1](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_1.png)
 ![toplvl2](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_2.png)
