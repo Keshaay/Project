@@ -71,12 +71,15 @@ links on sources [sources_project_1](https://github.com/Keshaay/Project/tree/mai
 ### Caesar's Cipher 
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/cesar.png)
+[caesar_png](https://github.com/Keshaay/Project/blob/main/.PNG/cesar.png)
 ### Vernam Cipher
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/vernam.png)
+[vernam_png](https://github.com/Keshaay/Project/blob/main/.PNG/vernam.png)
 ### Atbash Cipher
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/atbash.png)
+[atbash_png](https://github.com/Keshaay/Project/blob/main/.PNG/atbash.png)
 
 
 
