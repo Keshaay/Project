@@ -21,6 +21,8 @@ Caesar's Cipher consists in shifting the characters in the entered text by the s
 
 The Vernam Cipher lies in the entered password. The text is shifted by just as many characters as the individual letters in the password, depending on the sequence. For example, if we enter 'hello' and 'a' as the password, then all the letters in the word will be moved by exactly one -> 'beep' will be created.
 
+![ver](https://github.com/Keshaay/Project/blob/main/.PNG/ver.png)
+
 ### Atbash Cipher
 
 Atbash Cipher is a simple, classic, monoalphabetic substitution cipher, built on one coding table. The basic principle of Atbash is to reverse the order of characters in the encryption table. The first character of the plaintext alphabet thus corresponds to the last character of the cipher alphabet.
