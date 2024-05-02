@@ -36,6 +36,17 @@ Zde je ukázka našeho top_levelu, který jsme naimplementovali na desku NEXYS A
 
 ## Software description
 
+### Caesarova šifra 
+
+![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/cesar.png)
+### Vernamova šifra
+
+![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/vernam.png)
+### Atbashova šifra
+Zde můžeme vidět testbench, který ukazuje jak naše šífra funguje
+
+![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/atbash.png)
+
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
 
 ### Component(s) simulation
