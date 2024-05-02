@@ -14,15 +14,15 @@ Enter a description of the problem and how to solve it.
 
 ### Caesarova šifra 
 
-spočívá v posunu znaků v zadaném textu vždy o stejnou zadanou číselnou hodnotu v abecedě. Například pokud zadáte 'ahoj' a posun zvolíte 1 pak se všechny znaky v tomto slově posunou právě o jeden znak vpřed čili vznikne 'bipk'.
+Caesar's Cipher consists in shifting the characters in the entered text by the same entered numerical value in the alphabet. For example, if you enter 'hello' and shift is set to 1, then all the characters in this word will be shifted exactly one character forward, i.e. a 'beep' will be produced.
 
 ### Vernamova šifra
 
-spočívá v zadaném hesle. Text se posune právě o tolik znaků, kolik činí v závislosti na posloupnosti jednotlivá písmena v hesle. Pokud například zadáme 'ahoj' a jako heslo 'a' pak se všechna písmena ve slově posunou právě o jedno -> vznikne 'bipk'.
+The Vernam Cipher lies in the entered password. The text is shifted by just as many characters as the individual letters in the password, depending on the sequence. For example, if we enter 'hello' and 'a' as the password, then all the letters in the word will be moved by exactly one -> 'beep' will be created.
 
 ### Atbashova šifra
 
-je jednoduchou, klasickou, monoalfabetickou substituční šifrou, postavenou na jedné kódovací tabulce. Základním principem Atbashe je převrácení pořadí znaků v šifrovací tabulce. První znak abecedy otevřeného textu tak odpovídá poslednímu znaku abecedy šifry.
+Atbash Cipher is a simple, classic, monoalphabetic substitution cipher, built on one coding table. The basic principle of Atbash is to reverse the order of characters in the encryption table. The first character of the plaintext alphabet thus corresponds to the last character of the cipher alphabet.
 
 ![abc](https://github.com/Keshaay/Project/blob/main/.PNG/atbash_abeceda.png)
 
