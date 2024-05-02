@@ -15,6 +15,8 @@ Description: This project aims to demonstrate various simple ciphers, such as th
 
 Caesar's Cipher consists in shifting the characters in the entered text by the same entered numerical value in the alphabet. For example, if you enter 'hello' and shift is set to 1, then all the characters in this word will be shifted exactly one character forward, i.e. a 'beep' will be produced.
 
+![case](https://github.com/Keshaay/Project/blob/main/.PNG/Caesar3.svg.png)
+
 ### Vernamova šifra
 
 The Vernam Cipher lies in the entered password. The text is shifted by just as many characters as the individual letters in the password, depending on the sequence. For example, if we enter 'hello' and 'a' as the password, then all the letters in the word will be moved by exactly one -> 'beep' will be created.
