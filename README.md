@@ -49,10 +49,9 @@ Zde můžeme vidět simulace jednotlivých šifer, které ukazují jak probíhá
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/atbash.png)
 
 
-## Instructions
-
-Write an instruction manual for your application, including photos and a link to a short app video.
 
 ## References
 
-[https://cs.wikipedia.org/wiki/Caesarova](https://cs.wikipedia.org/wiki/Caesarova_%C5%A1ifra)
+[https://cs.wikipedia.org/wiki/Caesar](https://cs.wikipedia.org/wiki/Caesarova_%C5%A1ifra)
+[https://cs.wikipedia.org/wiki/Vernam](https://cs.wikipedia.org/wiki/Vernamova)
+[https://cs.wikipedia.org/wiki/Atbash](https://cs.wikipedia.org/wiki/Atba%C5%A1)
