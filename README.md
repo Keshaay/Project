@@ -10,7 +10,6 @@ Description: This project aims to demonstrate various simple ciphers, such as th
 
 ## Theoretical description and explanation
 
-Enter a description of the problem and how to solve it.
 
 ### Caesarova šifra 
 
@@ -26,7 +25,7 @@ Atbash Cipher is a simple, classic, monoalphabetic substitution cipher, built on
 
 ![abc](https://github.com/Keshaay/Project/blob/main/.PNG/atbash_abeceda.png)
 
-## Hardware description of demo application
+## Software description
 
 Zde je ukázka našeho top_levelu, který jsme naimplementovali na desku NEXYS A7 50t
 
@@ -34,7 +33,7 @@ Zde je ukázka našeho top_levelu, který jsme naimplementovali na desku NEXYS A
 ![toplvl2](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_2.png)
 ![toplvl3](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_3.png)
 
-## Software description
+### Component(s) simulation
 
 Zde můžeme vidět simulace jednotlivých šifer, které ukazují jak probíhá šífrování/dešifrování
 
@@ -49,10 +48,6 @@ Zde můžeme vidět simulace jednotlivých šifer, které ukazují jak probíhá
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/atbash.png)
 
-
-### Component(s) simulation
-
-Write descriptive text and put simulation screenshots of your components.
 
 ## Instructions
 
