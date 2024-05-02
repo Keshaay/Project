@@ -151,11 +151,11 @@ end component;
 
 signal sig_en_2ms : std_logic;
 signal sig_event1 : std_logic;
-signal sig_event2 : std_logic;
+signal sig_event2 : std_logic;				--event for buttons
 
-signal ltrindex_ceasar:natural:=0;
-signal ltrindex_vernan:natural:=0;
-signal ltrindexMAX_ceasar:natural:=4;
+signal ltrindex_ceasar:natural:=0;			-- current letter index 
+signal ltrindex_vernan:natural:=0;		
+signal ltrindexMAX_ceasar:natural:=4;		-- max letter index can be changed for txt'length
 signal ltrindexMAX_vernan:natural:=10;
 signal uartRdy : std_logic;
 signal uartSend : std_logic := '0';
@@ -218,7 +218,7 @@ begin
 		  if (uartRdy='1' and sig_event1='1') then 
 		   if(ltrindex_ceasar<ltrindexMAX_ceasar)then
 			uartSend <= '1';
-			Data<=bits_encrypted_ceasar(ltrindex_ceasar*8+7 downto 8*ltrindex_ceasar);
+			Data<=bits_encrypted_ceasar(ltrindex_ceasar*8+7 downto 8*ltrindex_ceasar);				--logic for sending encrypted/decrypted letter for ceasar
 			uartData <= Data;
 			ltrindex_ceasar<=ltrindex_ceasar+1;
 		  end if;
