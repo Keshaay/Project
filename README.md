@@ -30,6 +30,10 @@ je jednoduchou, klasickou, monoalfabetickou substituční šifrou, postavenou na
 
 Insert descriptive text and schematic(s) of your implementation.
 
+![toplvl1](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_1.png)
+![toplvl2](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_2.png)
+![toplvl3](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_3.png)
+
 ## Software description
 
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
