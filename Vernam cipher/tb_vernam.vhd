@@ -35,5 +35,5 @@ architecture Behavioral of tb_vernam is
 begin
     -- Zavoláme proceduru pro šifrování a dešifrování
     vernam_encrypt_decrypt(txt, key, encrypted); -- Šifrování
-    vernam_encrypt_decrypt(encrypted, key, decrypted); -- Dešifrování
+    vernam_encrypt_decrypt(encrypted, txt, decrypted); -- Dešifrování
 end Behavioral;
