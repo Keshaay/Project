@@ -28,7 +28,7 @@ je jednoduchou, klasickou, monoalfabetickou substituční šifrou, postavenou na
 
 ## Hardware description of demo application
 
-Insert descriptive text and schematic(s) of your implementation.
+Zde je ukázka našeho top_levelu, který jsme naimplementovali na desku NEXYS A7 50t
 
 ![toplvl1](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_1.png)
 ![toplvl2](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_2.png)
