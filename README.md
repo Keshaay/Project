@@ -11,17 +11,17 @@ Description: This project aims to demonstrate various simple ciphers, such as th
 ## Theoretical description and explanation
 
 
-### Caesarova šifra 
+### Caesar's Cipher 
 
 Caesar's Cipher consists in shifting the characters in the entered text by the same entered numerical value in the alphabet. For example, if you enter 'hello' and shift is set to 1, then all the characters in this word will be shifted exactly one character forward, i.e. a 'beep' will be produced.
 
 ![case](https://github.com/Keshaay/Project/blob/main/.PNG/ces.png)
 
-### Vernamova šifra
+### Vernam Cipher
 
 The Vernam Cipher lies in the entered password. The text is shifted by just as many characters as the individual letters in the password, depending on the sequence. For example, if we enter 'hello' and 'a' as the password, then all the letters in the word will be moved by exactly one -> 'beep' will be created.
 
-### Atbashova šifra
+### Atbash Cipher
 
 Atbash Cipher is a simple, classic, monoalphabetic substitution cipher, built on one coding table. The basic principle of Atbash is to reverse the order of characters in the encryption table. The first character of the plaintext alphabet thus corresponds to the last character of the cipher alphabet.
 
@@ -29,7 +29,7 @@ Atbash Cipher is a simple, classic, monoalphabetic substitution cipher, built on
 
 ## Software description
 
-Zde je ukázka našeho top_levelu, který jsme naimplementovali na desku NEXYS A7 50t
+Here is a sample of our top_level that we implemented on the NEXYS A7-50t board
 
 ![toplvl1](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_1.png)
 ![toplvl2](https://github.com/Keshaay/Project/blob/main/.PNG/toplevel_2.png)
@@ -37,16 +37,16 @@ Zde je ukázka našeho top_levelu, který jsme naimplementovali na desku NEXYS A
 
 ### Component(s) simulation
 
-Zde můžeme vidět simulace jednotlivých šifer, které ukazují jak probíhá šífrování/dešifrování
+Here we can see simulations of individual ciphers, which show how encryption/decryption takes place
 
 
-### Caesarova šifra 
+### Caesar's Cipher 
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/cesar.png)
-### Vernamova šifra
+### Vernam Cipher
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/vernam.png)
-### Atbashova šifra
+### Atbash Cipher
 
 ![cesr](https://github.com/Keshaay/Project/blob/main/.PNG/atbash.png)
 
